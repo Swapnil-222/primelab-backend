@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (project) {
+      <div>
+        <h2 data-cy="projectDetailsHeading"><span>Project</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ project.id }}</span>
+          </dd>
+          <dt><span>Project Name</span></dt>
+          <dd>
+            <span>{{ project.projectName }}</span>
+          </dd>
+          <dt><span>Reason</span></dt>
+          <dd>
+            <span>{{ project.reason }}</span>
+          </dd>
+          <dt><span>Type</span></dt>
+          <dd>
+            <span>{{ project.type }}</span>
+          </dd>
+          <dt><span>Division</span></dt>
+          <dd>
+            <span>{{ project.division }}</span>
+          </dd>
+          <dt><span>Category</span></dt>
+          <dd>
+            <span>{{ project.category }}</span>
+          </dd>
+          <dt><span>Priority</span></dt>
+          <dd>
+            <span>{{ project.priority }}</span>
+          </dd>
+          <dt><span>Department</span></dt>
+          <dd>
+            <span>{{ project.department }}</span>
+          </dd>
+          <dt><span>Start Date</span></dt>
+          <dd>
+            <span>{{ project.startDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span>End Date</span></dt>
+          <dd>
+            <span>{{ project.endDate | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span>Location</span></dt>
+          <dd>
+            <span>{{ project.location }}</span>
+          </dd>
+          <dt><span>Status</span></dt>
+          <dd>
+            <span>{{ project.status }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/project', project.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

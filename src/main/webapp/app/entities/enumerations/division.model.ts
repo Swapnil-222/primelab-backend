@@ -1,0 +1,11 @@
+export enum Division {
+  COMPRESSER = 'COMPRESSER',
+
+  FILTERS = 'FILTERS',
+
+  PUMPS = 'PUMPS',
+
+  GLASS = 'GLASS',
+
+  WATER_HEATER = 'WATER_HEATER',
+}

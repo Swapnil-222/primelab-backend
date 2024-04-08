@@ -1,0 +1,57 @@
+
+
+entity Project {
+    projectName String
+    reason Reason
+    type Type
+    division Division
+    category Category
+    priority Priority
+    department Department
+    startDate Instant
+    endDate Instant
+    location String
+    status String
+}
+// an ignored comment
+/** not an ignored comment */
+
+
+enum Reason {
+    BUSSINESS, DELERSHIP, TRANSPORT
+}
+
+enum Type {
+    INTERNAL, EXTERNAL, VENDER
+}
+
+enum Division{
+	COMPRESSER, FILTERS, PUMPS, GLASS, WATER_HEATER
+}
+
+enum Category{
+	QUALITY_A, QUALITY_B, QUALITY_C, QUALITY_D
+}
+
+enum Priority{
+	HIGH, MEDIUM, LOW
+}
+
+enum Department{
+	STARTEGY, FINANCE, QUALITY, MENTAINANCE, STORES
+}
+
+
+  // Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service * with serviceClass
+
+filter *
+// Set an angular suffix
+// angularSuffix * with tvg

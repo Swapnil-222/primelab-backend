@@ -1,0 +1,67 @@
+{
+  "annotations": {
+    "changelogDate": "20240408055613"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "entityTableName": "project",
+  "fields": [
+    {
+      "fieldName": "projectName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "Reason",
+      "fieldTypeDocumentation": "not an ignored comment",
+      "fieldValues": "BUSSINESS,DELERSHIP,TRANSPORT"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "Type",
+      "fieldValues": "INTERNAL,EXTERNAL,VENDER"
+    },
+    {
+      "fieldName": "division",
+      "fieldType": "Division",
+      "fieldValues": "COMPRESSER,FILTERS,PUMPS,GLASS,WATER_HEATER"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "Category",
+      "fieldValues": "QUALITY_A,QUALITY_B,QUALITY_C,QUALITY_D"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "Priority",
+      "fieldValues": "HIGH,MEDIUM,LOW"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "Department",
+      "fieldValues": "STARTEGY,FINANCE,QUALITY,MENTAINANCE,STORES"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Project",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

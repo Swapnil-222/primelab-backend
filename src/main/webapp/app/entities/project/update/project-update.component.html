@@ -1,0 +1,146 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-project-heading" data-cy="ProjectCreateUpdateHeading">Create or edit a Project</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_projectName">Project Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="projectName"
+            id="field_projectName"
+            data-cy="projectName"
+            formControlName="projectName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_reason">Reason</label>
+          <select class="form-control" name="reason" formControlName="reason" id="field_reason" data-cy="reason">
+            <option [ngValue]="null"></option>
+            @for (reason of reasonValues; track $index) {
+              <option [value]="reason">{{ reason }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_type">Type</label>
+          <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
+            <option [ngValue]="null"></option>
+            @for (type of typeValues; track $index) {
+              <option [value]="type">{{ type }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_division">Division</label>
+          <select class="form-control" name="division" formControlName="division" id="field_division" data-cy="division">
+            <option [ngValue]="null"></option>
+            @for (division of divisionValues; track $index) {
+              <option [value]="division">{{ division }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_category">Category</label>
+          <select class="form-control" name="category" formControlName="category" id="field_category" data-cy="category">
+            <option [ngValue]="null"></option>
+            @for (category of categoryValues; track $index) {
+              <option [value]="category">{{ category }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_priority">Priority</label>
+          <select class="form-control" name="priority" formControlName="priority" id="field_priority" data-cy="priority">
+            <option [ngValue]="null"></option>
+            @for (priority of priorityValues; track $index) {
+              <option [value]="priority">{{ priority }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_department">Department</label>
+          <select class="form-control" name="department" formControlName="department" id="field_department" data-cy="department">
+            <option [ngValue]="null"></option>
+            @for (department of departmentValues; track $index) {
+              <option [value]="department">{{ department }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_startDate">Start Date</label>
+          <div class="d-flex">
+            <input
+              id="field_startDate"
+              data-cy="startDate"
+              type="datetime-local"
+              class="form-control"
+              name="startDate"
+              formControlName="startDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_endDate">End Date</label>
+          <div class="d-flex">
+            <input
+              id="field_endDate"
+              data-cy="endDate"
+              type="datetime-local"
+              class="form-control"
+              name="endDate"
+              formControlName="endDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_location">Location</label>
+          <input type="text" class="form-control" name="location" id="field_location" data-cy="location" formControlName="location" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_status">Status</label>
+          <input type="text" class="form-control" name="status" id="field_status" data-cy="status" formControlName="status" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
